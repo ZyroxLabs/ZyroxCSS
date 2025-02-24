@@ -1,3 +1,5 @@
+@use "mixin" as *;
+
 .form-group {
   margin-bottom: var(--spacing);
 }
