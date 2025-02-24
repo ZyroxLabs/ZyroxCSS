@@ -1,3 +1,5 @@
+@use "mixin.scss";
+
 .flex { display: flex; }
 .flex-center { @include flex-center; }
 .flex-column { @include flex-column; }
