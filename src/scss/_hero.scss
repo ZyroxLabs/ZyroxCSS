@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  background-color: var(--primary-color);
+  color: white;
+  padding: calc(var(--spacing) * 4) var(--spacing);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: var(--spacing);
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: calc(var(--spacing) * 2);
+      line-height: 1.6;
+    }
+
+    .button {
+      margin: 0 8px;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  &.hero-small {
+    min-height: 40vh;
+    padding: calc(var(--spacing) * 2) var(--spacing);
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  &.hero-large {
+    min-height: 80vh;
+    padding: calc(var(--spacing) * 6) var(--spacing);
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.hero-primary {
+    background-color: var(--primary-color);
+  }
+
+  &.hero-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  &.hero-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+
+  &.hero-light {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  &.hero-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5;
+  }
+}

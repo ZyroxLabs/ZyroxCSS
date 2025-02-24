@@ -1,0 +1,15 @@
+{
+  "name": "zyroxcss",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "npx sass src/scss/zyroxcss.scss dist/css/zyroxcss.css",
+    "postcss": "npx postcss dist/zyroxcss.css --use autoprefixer -o dist/css/zyroxcss.css",
+    "build": "npm run build:css && npm run postcss"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "postcss-cli": "^8.0.0",
+    "sass": "^1.0.0"
+  }
+}

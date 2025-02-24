@@ -1,0 +1,25 @@
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+
+    .accordion-header {
+      padding: var(--spacing);
+      cursor: pointer;
+      @include flex-space-between;
+      @include transition;
+
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+
+    .accordion-content {
+      padding: var(--spacing);
+      display: none;
+    }
+
+    &.active .accordion-content {
+      display: block;
+    }
+  }
+}

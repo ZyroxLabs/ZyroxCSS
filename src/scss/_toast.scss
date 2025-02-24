@@ -1,0 +1,17 @@
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 1000;
+
+  &.show {
+    display: block;
+    animation: fadeIn 0.5s;
+  }
+}

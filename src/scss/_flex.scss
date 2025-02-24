@@ -1,0 +1,8 @@
+.flex { display: flex; }
+.flex-center { @include flex-center; }
+.flex-column { @include flex-column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-space-between { display: flex; justify-content: space-between; }
+.flex-space-around { display: flex; justify-content: space-around; }
+.flex-start { display: flex; justify-content: flex-start; }
+.flex-end { display: flex; justify-content: flex-end; }

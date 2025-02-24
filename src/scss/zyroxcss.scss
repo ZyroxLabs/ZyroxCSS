@@ -1,0 +1,50 @@
+/**
+ * ZyroxCSS SCSS Stylesheet
+ *
+ * (c) 2025 ZyroxCSS Team
+ * Released under the MIT License
+ * https://opensource.org/licenses/MIT
+ */
+
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_color.scss";
+@import "_spacing.scss";
+@import "_flex.scss";
+@import "_grid.scss";
+@import "_forms.scss";
+@import "_button.scss";
+@import "_badge.scss";
+@import "_alert.scss";
+@import "_card.scss";
+@import "_accordion.scss";
+@import "_dropdown.scss";
+@import "_navbar.scss";
+@import "_modal.scss";
+@import "_tooltip.scss";
+@import "_toast.scss";
+@import "_tabs.scss";
+@import "_progress.scss";
+@import "_spinner.scss";
+@import "_carousel.scss";
+@import "_hero.scss";
+@import "_media.scss";
+@import "_dark-mode.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,46 @@
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  @include shadow;
+  @include transition;
+
+  &:hover {
+    background: var(--secondary-color);
+  }
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+
+  .card {
+    background-color: #1e1e1e;
+    color: var(--dark-text);
+  }
+
+  .navbar {
+    background-color: #1e1e1e;
+  }
+
+  .footer {
+    background-color: #1e1e1e;
+  }
+
+  .table th {
+    background-color: #1e1e1e;
+  }
+
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: #2e2e2e;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #3e3e3e;
+  }
+}

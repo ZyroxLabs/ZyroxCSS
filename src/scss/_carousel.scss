@@ -1,0 +1,37 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+
+  .carousel-inner {
+    display: flex;
+    @include transition;
+
+    .carousel-item {
+      min-width: 100%;
+      position: relative;
+    }
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+}

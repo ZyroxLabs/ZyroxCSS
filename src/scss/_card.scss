@@ -1,0 +1,28 @@
+.card {
+  background: white;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  @include shadow;
+  margin-bottom: var(--spacing);
+  @include transition;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: var(--spacing);
+  }
+
+  .card-body {
+    font-size: 1rem;
+  }
+
+  .card-footer {
+    margin-top: var(--spacing);
+    padding-top: var(--spacing);
+    border-top: 1px solid #eee;
+  }
+}

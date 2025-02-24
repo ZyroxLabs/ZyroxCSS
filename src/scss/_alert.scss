@@ -1,0 +1,27 @@
+.alert {
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing);
+  color: var(--alert-text);
+  background-color: var(--alert-bg);
+
+  &.alert-success {
+    background-color: var(--success-color);
+    color: white;
+  }
+
+  &.alert-error {
+    background-color: var(--error-color);
+    color: white;
+  }
+
+  &.alert-warning {
+    background-color: var(--warning-color);
+    color: white;
+  }
+
+  &.alert-info {
+    background-color: var(--info-color);
+    color: white;
+  }
+}

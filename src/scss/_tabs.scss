@@ -1,0 +1,29 @@
+.tabs {
+  .tab-header {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+
+    .tab-link {
+      padding: var(--spacing);
+      cursor: pointer;
+      @include transition;
+
+      &:hover {
+        background: #f1f1f1;
+      }
+
+      &.active {
+        border-bottom: 2px solid var(--primary-color);
+      }
+    }
+  }
+
+  .tab-content {
+    padding: var(--spacing);
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
