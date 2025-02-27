@@ -61,7 +61,7 @@
     background-color: var(--error-color);
 
     &:hover {
-      background-color: color-mix(in srgb, var(--error-color) 80%, blacklist);
+      background-color: color-mix(in srgb, var(--error-color) 80%, black);
     }
   }
 
@@ -70,7 +70,7 @@
     color: #333;
 
     &:hover {
-      background-color: darken(var(--warning-color), 10%);
+      background-color: color-mix(in srgb, var(--warning-color) 80%, black);
     }
   }
 
@@ -78,7 +78,7 @@
     background-color: var(--info-color);
 
     &:hover {
-      background-color: darken(var(--info-color), 10%);
+      background-color: color-mix(in srgb, var(--info-color) 80%, black);
     }
   }
 }
