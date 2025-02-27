@@ -1,0 +1,6 @@
+.text-fluid {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem)
+}
+
+.text-balance { text-wrap: balance }
+.text-pretty { text-wrap: pretty }

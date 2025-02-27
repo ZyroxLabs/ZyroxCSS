@@ -1,0 +1,38 @@
+.button-glow {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, 
+      rgba(255,255,255,0.3), 
+      transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.button-press { transition: transform 0.1s;
+  &:active { transform: translateY(2px) }
+}
+
+.button-gradient {
+  background: linear-gradient(
+    45deg, 
+    var(--primary-color), 
+    var(--secondary-color)
+  );
+  background-size: 200% auto;
+  transition: background-position 0.3s;
+  
+  &:hover {
+    background-position: right center;
+  }
+}

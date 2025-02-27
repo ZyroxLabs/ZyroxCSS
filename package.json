@@ -1,6 +1,6 @@
 {
   "name": "zyroxcss",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "build:css": "npx sass src/scss/zyroxcss.scss dist/css/zyroxcss.css",
     "postcss": "npx postcss dist/css/zyroxcss.css --use autoprefixer -o dist/css/zyroxcss.css",

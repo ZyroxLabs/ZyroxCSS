@@ -1,0 +1,15 @@
+.hover-scale { transition: transform 0.2s;
+  &:hover { transform: scale(1.05) }
+}
+
+.hover-rotate { transition: transform 0.2s;
+  &:hover { transform: rotate(3deg) }
+}
+
+.hover-brightness { transition: filter 0.2s;
+  &:hover { filter: brightness(1.2) }
+}
+
+.active-shrink { transition: transform 0.1s;
+  &:active { transform: scale(0.95) }
+}

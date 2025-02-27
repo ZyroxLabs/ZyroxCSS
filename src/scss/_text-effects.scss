@@ -1,0 +1,14 @@
+.text-stroke-sm {
+  -webkit-text-stroke: 1px currentColor;
+  paint-order: stroke fill;
+}
+
+.text-stroke-md {
+  -webkit-text-stroke: 2px currentColor;
+  paint-order: stroke fill;
+}
+
+.text-stroke-lg {
+  -webkit-text-stroke: 3px currentColor;
+  paint-order: stroke fill;
+}
