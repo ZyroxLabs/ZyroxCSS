@@ -1,84 +1,126 @@
-@use "mixin" as *;
+@use "../mixins" as mx;
+@use "../variables" as vars;
 
-.button {
+.btn {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-
-  &:hover {
-    background-color: var(--secondary-color);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-
-  &.button-outline {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    box-shadow: none;
-
-    &:hover {
-      background-color: var(--primary-color);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-  }
-
-  &.button-small {
-    padding: 8px 16px;
-    font-size: 0.875rem;
-  }
-
-  &.button-large {
-    padding: 12px 24px;
-    font-size: 1.25rem;
-  }
-
-  &.button-success {
-    background-color: var(--success-color);
+  position: relative;
+  gap: 0.5em;
   
-    &:hover {
-      background-color: color-mix(in srgb, var(--success-color) 80%, black);
+  font-family: inherit;
+  font-weight: vars.$font-weight-medium;
+  line-height: vars.$line-height-normal;
+  text-align: center;
+  
+  cursor: pointer;
+  transition: 
+    background-color vars.$transition-duration vars.$transition-easing,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+  
+  min-height: vars.$input-height;
+  padding: 0 vars.$spacing-md;
+  border-radius: vars.$border-radius;
+  
+  &:focus-visible {
+    @include mx.focus-ring;
+    z-index: 1;
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+@each $color, $value in vars.$theme-colors {
+  .btn--#{$color} {
+    background-color: $value;
+    color: mx.color-contrast($value);
+    
+    &:hover:not(:disabled) {
+      background-color: mx.shade($value, 15%);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: mx.shade($value, 25%);
     }
   }
-
-  &.button-error {
-    background-color: var(--error-color);
-
-    &:hover {
-      background-color: color-mix(in srgb, var(--error-color) 80%, black);
+  
+  .btn--outline-#{$color} {
+    background-color: transparent;
+    color: $value;
+    border: 1px solid $value;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($value, 0.08);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: rgba($value, 0.16);
     }
   }
+}
 
-  &.button-warning {
-    background-color: var(--warning-color);
-    color: #333;
+.btn--sm {
+  min-height: vars.$input-height-sm;
+  padding: 0 vars.$spacing-sm;
+  font-size: vars.$font-size-sm;
+}
 
-    &:hover {
-      background-color: color-mix(in srgb, var(--warning-color) 80%, black);
-    }
+.btn--lg {
+  min-height: vars.$input-height-lg;
+  padding: 0 vars.$spacing-lg;
+  font-size: vars.$font-size-lg;
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+.btn--icon {
+  padding: 0;
+  width: vars.$input-height;
+  height: vars.$input-height;
+  
+  &.btn--sm {
+    width: vars.$input-height-sm;
+    height: vars.$input-height-sm;
   }
+  
+  &.btn--lg {
+    width: vars.$input-height-lg;
+    height: vars.$input-height-lg;
+  }
+}
 
-  &.button-info {
-    background-color: var(--info-color);
+.btn__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    &:hover {
-      background-color: color-mix(in srgb, var(--info-color) 80%, black);
-    }
+.btn__content {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+  
+  .btn--loading & {
+    visibility: hidden;
   }
 }
