@@ -1,6 +1,5 @@
 .hero {
   position: relative;
-  background-color: var(--primary-color);
   color: white;
   padding: calc(var(--spacing) * 4) var(--spacing);
   text-align: center;
@@ -9,40 +8,62 @@
   align-items: center;
   justify-content: center;
   min-height: 60vh;
+  background-color: var(--primary-color);
+  isolation: isolate;
 
-  .hero-content {
+  &-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
+    padding: var(--spacing);
+    animation: fadeInUp 0.8s ease-out;
 
     h1 {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin-bottom: var(--spacing);
-      font-weight: bold;
+      font-weight: 800;
       line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
       margin-bottom: calc(var(--spacing) * 2);
       line-height: 1.6;
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button-group {
+      display: flex;
+      gap: var(--spacing);
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .button {
       margin: 0 8px;
       font-size: 1rem;
-      padding: 12px 24px;
+      padding: 12px 28px;
       border-radius: var(--border-radius);
       transition: var(--transition);
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
       &:hover {
         transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active {
+        transform: translateY(1px);
       }
     }
   }
 
-  .hero-background {
+  &-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -52,67 +73,24 @@
     background-position: center;
     opacity: 0.3;
     z-index: 1;
+    transition: transform 10s ease; // Subtle zoom effect
   }
 
-  .hero-overlay {
+  &-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
     z-index: 1;
   }
 
-  &.hero-small {
-    min-height: 40vh;
-    padding: calc(var(--spacing) * 2) var(--spacing);
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  &.hero-large {
-    min-height: 80vh;
-    padding: calc(var(--spacing) * 6) var(--spacing);
-
-    h1 {
-      font-size: 4rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
-  }
-
-  &.hero-primary {
-    background-color: var(--primary-color);
-  }
-
-  &.hero-secondary {
-    background-color: var(--secondary-color);
-  }
-
-  &.hero-dark {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-  }
-
-  &.hero-light {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-
-  &.hero-gradient {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  }
-
-  .hero-video {
+  &-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -120,6 +98,94 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &-small {
+    min-height: 40vh;
+    padding: calc(var(--spacing) * 2) var(--spacing);
+
+    .hero-content h1 {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+    }
+  }
+
+  &-large {
+    min-height: 80vh;
+    padding: calc(var(--spacing) * 6) var(--spacing);
+
+    .hero-content h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .hero-content p {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    }
+  }
+
+  &-fullscreen {
+    min-height: 100vh;
+  }
+
+  &-primary {
+    background-color: var(--primary-color);
+  }
+
+  &-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  &-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+    }
+  }
+
+  &-light {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+    }
+  }
+
+  &-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
+  }
+
+  &-parallax {
+    background-attachment: fixed;
+  }
+
+  &:hover .hero-background {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
