@@ -1,0 +1,11 @@
+.hidden { display: none; }
+.block { display: block; }
+.flex { display: flex; }
+.grid { display: grid; }
+
+@media (min-width: 768px) {
+  .md\\:block { display: block !important; }
+  .md\\:hidden { display: none !important; }
+  .md\\:grid { display: grid !important; }
+  .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
