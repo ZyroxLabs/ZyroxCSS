@@ -2,6 +2,12 @@
 
 A modern, responsive CSS framework built with SCSS for creating beautiful and accessible web interfaces.
 
+**Version**: 2.0.0 | **Status**: Stable & Production Ready
+
+## ⚠️ Breaking Changes Notice
+
+v2.0.0 includes significant breaking changes from v1.x. Please see [CHANGELOG.md](./CHANGELOG.md) and [MODERNIZATION.md](./MODERNIZATION.md) for migration guidance.
+
 ## 🎨 Features
 
 ### Modern Design
