@@ -305,5 +305,5 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 ---
 
-**Version**: 1.1.0  
+**Version**: 2.0.0  
 **Last Updated**: January 2026
