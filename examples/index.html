@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZyroxCSS v2.0.0 - Complete Component Showcase</title>
+    <!-- ZyroxCSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zyroxcss@2.0.0/dist/zyroxcss.min.css">
+    <style>
+        :root {
+            --section-bg: #f9fafb;
+            --section-border: #e5e7eb;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f3ff 0%, #f0f9ff 100%);
+            padding: 0;
+            margin: 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #6366F1 0%, #06B6D4 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--section-border);
+        }
+
+        .demo-section h2 {
+            color: #6366F1;
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .demo-section h3 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9ca3af;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .demo-grid-items {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .demo-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #06B6D4;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-list {
+            background: #f0f9ff;
+            border-left: 4px solid #06B6D4;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-list ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            color: #374151;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>🎨 ZyroxCSS v2.0.0</h1>
+        <p>Modern, Responsive CSS Framework untuk Web Modern</p>
+        <div class="demo-row" style="justify-content: center; margin-top: 2rem;">
+            <a href="components.html" class="btn btn--primary btn--lg">Lihat Semua Komponen</a>
+            <a href="https://github.com/ZyroxLabs/ZyroxCSS" class="btn btn--outline btn--lg">GitHub</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="demo-grid">
+        <!-- Buttons Section -->
+        <div class="demo-section">
+            <h2>🔘 Buttons</h2>
+            <div class="feature-list">
+                <strong>Variasi:</strong>
+                <ul>
+                    <li>Primary, Secondary, Success, Danger, Warning, Ghost</li>
+                    <li>Ukuran: SM, MD, LG, XL</li>
+                    <li>States: Hover, Focus, Disabled, Loading</li>
+                </ul>
+            </div>
+            <h3>Dasar</h3>
+            <div class="demo-row">
+                <button class="btn btn--primary">Primary</button>
+                <button class="btn btn--secondary">Secondary</button>
+                <button class="btn btn--success">Success</button>
+            </div>
+            <h3>Ukuran</h3>
+            <div class="demo-row">
+                <button class="btn btn--primary btn--sm">Small</button>
+                <button class="btn btn--primary btn--md">Medium</button>
+                <button class="btn btn--primary btn--lg">Large</button>
+            </div>
+            <h3>Outline</h3>
+            <div class="demo-row">
+                <button class="btn btn--outline">Default</button>
+                <button class="btn btn--outline" style="color: #06b6d4; border-color: #06b6d4;">Cyan</button>
+                <button class="btn btn--outline" disabled>Disabled</button>
+            </div>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="demo-section">
+            <h2>📇 Cards</h2>
+            <div class="feature-list">
+                <strong>Varian:</strong>
+                <ul>
+                    <li>Elevated, Flat, dengan warna</li>
+                    <li>Header, Body, Footer</li>
+                    <li>Responsive grid</li>
+                </ul>
+            </div>
+            <h3>Elevated Card</h3>
+            <div class="card card--elevated">
+                <div class="card-header">
+                    <strong>Card Title</strong>
+                </div>
+                <div class="card-body">
+                    <p>Konten card dengan styling modern dan responsif.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn--primary btn--sm">Aksi</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div class="demo-section">
+            <h2>📝 Forms</h2>
+            <div class="feature-list">
+                <strong>Elemen:</strong>
+                <ul>
+                    <li>Input, Select, Textarea</li>
+                    <li>Checkbox & Radio</li>
+                    <li>Floating Labels</li>
+                </ul>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label class="form-label" for="name">Nama</label>
+                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan email">
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" id="agree" class="form-check-input">
+                        <label class="form-check-label" for="agree">Saya setuju dengan syarat</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--primary">Kirim</button>
+            </form>
+        </div>
+
+        <!-- Alerts Section -->
+        <div class="demo-section">
+            <h2>⚠️ Alerts</h2>
+            <div class="feature-list">
+                <strong>Tipe:</strong>
+                <ul>
+                    <li>Success, Error, Warning, Info</li>
+                    <li>Dismissible</li>
+                    <li>Dengan icon</li>
+                </ul>
+            </div>
+            <div class="alert alert--success">
+                ✓ Sukses! Data berhasil disimpan.
+            </div>
+            <div class="alert alert--error">
+                ✗ Error! Terjadi kesalahan.
+            </div>
+            <div class="alert alert--warning">
+                ⚠ Warning! Perhatian diperlukan.
+            </div>
+        </div>
+
+        <!-- Badges Section -->
+        <div class="demo-section">
+            <h2>🏷️ Badges</h2>
+            <div class="feature-list">
+                <strong>Gaya:</strong>
+                <ul>
+                    <li>Multiple variants</li>
+                    <li>Sizes: SM, MD, LG</li>
+                    <li>Rounded badges</li>
+                </ul>
+            </div>
+            <div class="demo-row">
+                <span class="badge badge--primary">Primary</span>
+                <span class="badge badge--secondary">Secondary</span>
+                <span class="badge badge--success">Success</span>
+                <span class="badge badge--danger">Danger</span>
+            </div>
+            <h3>Dengan Dot</h3>
+            <div class="demo-row">
+                <span class="badge badge--primary">
+                    <span class="badge-dot"></span> Online
+                </span>
+                <span class="badge badge--warning">
+                    <span class="badge-dot"></span> Pending
+                </span>
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="demo-section">
+            <h2>📑 Tabs</h2>
+            <div class="feature-list">
+                <strong>Style:</strong>
+                <ul>
+                    <li>Default, Pills, Vertical</li>
+                    <li>Animated transitions</li>
+                    <li>Responsive</li>
+                </ul>
+            </div>
+            <div class="tabs">
+                <div class="tabs-nav">
+                    <button class="tabs-button active">Tab 1</button>
+                    <button class="tabs-button">Tab 2</button>
+                    <button class="tabs-button">Tab 3</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tabs-pane active">Konten tab 1 ditampilkan di sini.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="demo-section">
+            <h2>⏳ Progress</h2>
+            <div class="feature-list">
+                <strong>Varian:</strong>
+                <ul>
+                    <li>Standard bars</li>
+                    <li>Animated & Striped</li>
+                    <li>Circular progress</li>
+                </ul>
+            </div>
+            <h3>Dasar</h3>
+            <div class="progress" style="margin: 1rem 0;">
+                <div class="progress-bar" style="width: 65%; background: #6366F1;"></div>
+            </div>
+            <h3>Animated</h3>
+            <div class="progress" style="margin: 1rem 0;">
+                <div class="progress-bar progress-bar--striped progress-bar--animated" style="width: 40%; background: #06B6D4;"></div>
+            </div>
+        </div>
+
+        <!-- Tooltips & Modals -->
+        <div class="demo-section">
+            <h2>💬 Interactive</h2>
+            <div class="feature-list">
+                <strong>Komponen:</strong>
+                <ul>
+                    <li>Tooltips dengan 4 posisi</li>
+                    <li>Modal dengan berbagai ukuran</li>
+                    <li>Smooth animations</li>
+                </ul>
+            </div>
+            <div class="demo-row">
+                <button class="btn btn--secondary" data-tooltip="Ini tooltip!" title="Tooltip">Hover Me</button>
+                <button class="btn btn--secondary" onclick="alert('Modal demo')">Buka Modal</button>
+            </div>
+        </div>
+
+        <!-- Responsive Grid -->
+        <div class="demo-section">
+            <h2>🔲 Grid System</h2>
+            <div class="feature-list">
+                <strong>Grid:</strong>
+                <ul>
+                    <li>12-column system</li>
+                    <li>5 breakpoints</li>
+                    <li>Auto-fit layouts</li>
+                </ul>
+            </div>
+            <div class="grid">
+                <div class="col-md-6" style="background: #dbeafe; padding: 1rem; border-radius: 0.5rem; text-align: center;">Col 6 (md)</div>
+                <div class="col-md-6" style="background: #cffafe; padding: 1rem; border-radius: 0.5rem; text-align: center;">Col 6 (md)</div>
+            </div>
+        </div>
+
+        <!-- Responsive Typography -->
+        <div class="demo-section">
+            <h2>✍️ Typography</h2>
+            <div class="feature-list">
+                <strong>Fitur:</strong>
+                <ul>
+                    <li>Fluid typography dengan clamp()</li>
+                    <li>Responsive headings</li>
+                    <li>Text utilities</li>
+                </ul>
+            </div>
+            <h1 style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin: 1rem 0;">Responsive Heading</h1>
+            <p style="font-size: clamp(0.875rem, 2vw, 1.125rem);">Teks ini akan menyesuaikan ukuran dengan viewport secara fluid.</p>
+        </div>
+    </div>
+
+    <!-- Documentation Link -->
+    <div style="background: white; padding: 2rem 1rem; text-align: center; margin-top: 2rem; border-top: 1px solid #e5e7eb;">
+        <h2>📚 Dokumentasi Lengkap</h2>
+        <p>Lihat dokumentasi lengkap di halaman komponen yang detail.</p>
+        <div class="demo-row" style="justify-content: center;">
+            <a href="components.html" class="btn btn--primary">Semua Komponen</a>
+            <a href="../README.md" class="btn btn--secondary">README</a>
+            <a href="../MODERNIZATION.md" class="btn btn--secondary">Modernization</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3>ZyroxCSS v2.0.0</h3>
+        <p>A modern, responsive CSS framework built with SCSS</p>
+        <p>
+            <a href="https://github.com/ZyroxLabs/ZyroxCSS">GitHub</a> •
+            <a href="https://github.com/ZyroxLabs/ZyroxCSS/releases">Releases</a> •
+            <a href="https://github.com/ZyroxLabs/ZyroxCSS/blob/main/CHANGELOG.md">Changelog</a>
+        </p>
+        <p style="opacity: 0.7; font-size: 0.875rem;">© 2026 ZyroxLabs. All rights reserved.</p>
+    </div>
+</body>
+</html>
