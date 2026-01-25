@@ -47,7 +47,7 @@ v2.0.0 includes significant breaking changes from v1.x. Please see [CHANGELOG.md
 ## 📦 Installation
 
 ```bash
-npm install zyroxcss
+npm install zyroxcssv2
 ```
 
 ## 🚀 Quick Start
