@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Minify CSS
-        run: npx clean-css-cli -o dist/zyroxcss.min.css dist/zyroxcss.css
+        run: npx clean-css-cli -o dist/css/zyroxcss.min.css dist/css/zyroxcss.css
 
       - name: Generate SHA512
         id: hash
@@ -75,6 +75,6 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/zyroxcss.min.css
+          asset_path: ./dist/css/zyroxcss.min.css
           asset_name: zyroxcss.min.css
           asset_content_type: text/css
