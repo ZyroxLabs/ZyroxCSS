@@ -1,0 +1,80 @@
+name: Build & Draft Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+  packages: write
+  actions: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Minify CSS
+        run: npx clean-css-cli -o dist/zyroxcss.min.css dist/zyroxcss.css
+
+      - name: Generate SHA512
+        id: hash
+        run: |
+          sha512sum dist/zyroxcss.min.css | awk '{ print $1 }' > dist/zyroxcss.min.css.sha512
+          HASH=$(cat dist/zyroxcss.min.css.sha512)
+          echo "sha512=$HASH" >> $GITHUB_ENV
+
+      - name: Create Draft Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          draft: true
+          body: |
+            **Release Date:** ${{ github.event.pushed_at }}
+            **Status:** Stable
+            **Type:** Minor Update
+
+            ## Changelog
+            Full details can be found [here](changelogs/${{ github.ref_name }}.md).
+
+            ## Installation
+            ### CDN
+            ```html
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zyroxcssv2@${{ github.ref_name }}/dist/css/zyroxcss.min.css" integrity="sha512-${{ env.sha512 }}" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://unpkg.com/zyroxcssv2@${{ github.ref_name }}/dist/css/zyroxcss.min.css" integrity="sha512-${{ env.sha512 }}" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zyroxcssv2/${{ github.ref_name }}/zyroxcss.min.css" integrity="sha512-${{ env.sha512 }}" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            ```
+            ### npm
+            ```bash
+            npm install zyroxcssv2
+            ```
+            ```js
+            import 'zyroxcssv2/dist/css/zyroxcss.min.css';
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Minified CSS to Release
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/zyroxcss.min.css
+          asset_name: zyroxcss.min.css
+          asset_content_type: text/css
