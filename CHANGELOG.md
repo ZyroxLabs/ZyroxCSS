@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-03-06
+
+### Added
+- **JavaScript Components Library**: Complete interactive functionality for all components
+  - Modal system with open/close triggers and keyboard support
+  - Interactive dropdown menus with mobile optimization
+  - Carousel component with navigation and auto-play
+  - Dynamic tab switching
+  - Toast notification system
+  - Enhanced tooltips for touch devices
+  - Alert dismissal functionality
+
+- **Build System Updates**:
+  - Added JavaScript build pipeline
+  - Updated npm scripts for JS compilation
+  - Distribution now includes both CSS and JS files
+
+- **API Methods**:
+  - `ZyroxCSS.init()`: Initialize all components
+  - `openModal()`, `closeModal()`: Manual modal control
+  - `showToast()`: Programmatic toast notifications
+
+### Enhanced
+- **Component Interactions**: All CSS components now have full JavaScript support
+- **Mobile Experience**: Touch-friendly interactions and gestures
+- **Accessibility**: Keyboard navigation and screen reader support
+
 ## [2.0.0] - 2026-01-16
 
 ### ⚠️ BREAKING CHANGES

@@ -2,7 +2,7 @@
 
 A modern, responsive CSS framework built with SCSS for creating beautiful and accessible web interfaces.
 
-**Version**: 2.0.0 | **Status**: Stable & Production Ready
+**Version**: 2.1.0 | **Status**: Stable & Production Ready
 
 ## ⚠️ Breaking Changes Notice
 
@@ -80,11 +80,43 @@ npm install
 # Build CSS from SCSS
 npm run build:css
 
+# Build JavaScript
+npm run build:js
+
 # Run PostCSS with autoprefixer
 npm run postcss
 
 # Build everything
 npm run build
+```
+
+### JavaScript Components
+
+ZyroxCSS v2.1.0 includes full JavaScript functionality for interactive components:
+
+```html
+<!-- Include both CSS and JS -->
+<link rel="stylesheet" href="dist/css/zyroxcss.css">
+<script src="dist/js/zyroxcss.js"></script>
+```
+
+**Interactive Components:**
+- **Modals**: Click to open, escape/backdrop to close
+- **Dropdowns**: Toggle menus with mobile support
+- **Carousels**: Navigation controls and auto-play
+- **Tabs**: Dynamic content switching
+- **Toasts**: Programmatic notifications
+- **Tooltips**: Enhanced for touch devices
+- **Alerts**: Dismissible notifications
+
+**JavaScript API:**
+```javascript
+// Initialize all components
+const zyrox = new ZyroxCSS();
+
+// Manual control
+zyrox.openModal('#my-modal');
+zyrox.showToast('Success!', 'success');
 ```
 
 ## 🎯 Breakpoints
@@ -305,5 +337,5 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 ---
 
-**Version**: 2.0.0  
-**Last Updated**: January 2026
+**Version**: 2.1.0  
+**Last Updated**: March 2026

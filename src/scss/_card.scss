@@ -9,10 +9,11 @@
   transition: var(--transition);
   border: 1px solid var(--border-color);
   overflow: hidden;
+  position: relative;
 
   &:hover {
     box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   &.card--elevated {

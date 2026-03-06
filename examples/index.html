@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZyroxCSS v2.0.0 - Complete Component Showcase</title>
+    <title>ZyroxCSS v2.1.0 - Complete Component Showcase</title>
     <!-- ZyroxCSS CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zyroxcss@2.0.0/dist/zyroxcss.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zyroxcss@2.1.0/dist/zyroxcss.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/zyroxcssv2@2.1.0/dist/zyroxcss.min.js"></script>
     <style>
         :root {
             --section-bg: #f9fafb;
@@ -145,10 +146,10 @@
 <body>
     <!-- Hero Section -->
     <div class="hero">
-        <h1>🎨 ZyroxCSS v2.0.0</h1>
-        <p>Modern, Responsive CSS Framework untuk Web Modern</p>
+        <h1>🎨 ZyroxCSS v2.1.0</h1>
+        <p>Modern, Responsive CSS Framework with JavaScript Components</p>
         <div class="demo-row" style="justify-content: center; margin-top: 2rem;">
-            <a href="components.html" class="btn btn--primary btn--lg">Lihat Semua Komponen</a>
+            <a href="components.html" class="btn btn--primary btn--lg">View All Components</a>
             <a href="https://github.com/ZyroxLabs/ZyroxCSS" class="btn btn--outline btn--lg">GitHub</a>
         </div>
     </div>
@@ -159,20 +160,20 @@
         <div class="demo-section">
             <h2>🔘 Buttons</h2>
             <div class="feature-list">
-                <strong>Variasi:</strong>
+                <strong>Variants:</strong>
                 <ul>
                     <li>Primary, Secondary, Success, Danger, Warning, Ghost</li>
-                    <li>Ukuran: SM, MD, LG, XL</li>
+                    <li>Sizes: SM, MD, LG, XL</li>
                     <li>States: Hover, Focus, Disabled, Loading</li>
                 </ul>
             </div>
-            <h3>Dasar</h3>
+            <h3>Basic</h3>
             <div class="demo-row">
                 <button class="btn btn--primary">Primary</button>
                 <button class="btn btn--secondary">Secondary</button>
                 <button class="btn btn--success">Success</button>
             </div>
-            <h3>Ukuran</h3>
+            <h3>Sizes</h3>
             <div class="demo-row">
                 <button class="btn btn--primary btn--sm">Small</button>
                 <button class="btn btn--primary btn--md">Medium</button>
@@ -190,9 +191,9 @@
         <div class="demo-section">
             <h2>📇 Cards</h2>
             <div class="feature-list">
-                <strong>Varian:</strong>
+                <strong>Variants:</strong>
                 <ul>
-                    <li>Elevated, Flat, dengan warna</li>
+                    <li>Elevated, Flat, with colors</li>
                     <li>Header, Body, Footer</li>
                     <li>Responsive grid</li>
                 </ul>
@@ -203,10 +204,10 @@
                     <strong>Card Title</strong>
                 </div>
                 <div class="card-body">
-                    <p>Konten card dengan styling modern dan responsif.</p>
+                    <p>Modern and responsive card content.</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn--primary btn--sm">Aksi</button>
+                    <button class="btn btn--primary btn--sm">Action</button>
                 </div>
             </div>
         </div>
@@ -215,7 +216,7 @@
         <div class="demo-section">
             <h2>📝 Forms</h2>
             <div class="feature-list">
-                <strong>Elemen:</strong>
+                <strong>Elements:</strong>
                 <ul>
                     <li>Input, Select, Textarea</li>
                     <li>Checkbox & Radio</li>
@@ -224,20 +225,20 @@
             </div>
             <form>
                 <div class="form-group">
-                    <label class="form-label" for="name">Nama</label>
-                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                     <div class="form-check">
                         <input type="checkbox" id="agree" class="form-check-input">
-                        <label class="form-check-label" for="agree">Saya setuju dengan syarat</label>
+                        <label class="form-check-label" for="agree">I agree to the terms</label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn--primary">Kirim</button>
+                <button type="submit" class="btn btn--primary">Submit</button>
             </form>
         </div>
 
@@ -245,21 +246,21 @@
         <div class="demo-section">
             <h2>⚠️ Alerts</h2>
             <div class="feature-list">
-                <strong>Tipe:</strong>
+                <strong>Types:</strong>
                 <ul>
                     <li>Success, Error, Warning, Info</li>
                     <li>Dismissible</li>
-                    <li>Dengan icon</li>
+                    <li>With icons</li>
                 </ul>
             </div>
             <div class="alert alert--success">
-                ✓ Sukses! Data berhasil disimpan.
+                ✓ Success! Data saved successfully.
             </div>
             <div class="alert alert--error">
-                ✗ Error! Terjadi kesalahan.
+                ✗ Error! An error occurred.
             </div>
             <div class="alert alert--warning">
-                ⚠ Warning! Perhatian diperlukan.
+                ⚠ Warning! Attention required.
             </div>
         </div>
 
@@ -267,7 +268,7 @@
         <div class="demo-section">
             <h2>🏷️ Badges</h2>
             <div class="feature-list">
-                <strong>Gaya:</strong>
+                <strong>Styles:</strong>
                 <ul>
                     <li>Multiple variants</li>
                     <li>Sizes: SM, MD, LG</li>
@@ -280,7 +281,7 @@
                 <span class="badge badge--success">Success</span>
                 <span class="badge badge--danger">Danger</span>
             </div>
-            <h3>Dengan Dot</h3>
+            <h3>With Dots</h3>
             <div class="demo-row">
                 <span class="badge badge--primary">
                     <span class="badge-dot"></span> Online
@@ -303,13 +304,19 @@
                 </ul>
             </div>
             <div class="tabs">
-                <div class="tabs-nav">
-                    <button class="tabs-button active">Tab 1</button>
-                    <button class="tabs-button">Tab 2</button>
-                    <button class="tabs-button">Tab 3</button>
+                <div class="tab-header">
+                    <button class="tab-link active">Tab 1</button>
+                    <button class="tab-link">Tab 2</button>
+                    <button class="tab-link">Tab 3</button>
                 </div>
-                <div class="tabs-content">
-                    <div class="tabs-pane active">Konten tab 1 ditampilkan di sini.</div>
+                <div class="tab-content active">
+                    <p>Tab 1 content is displayed here. This tab is active by default.</p>
+                </div>
+                <div class="tab-content">
+                    <p>Tab 2 content is hidden until clicked. JavaScript handles the switching.</p>
+                </div>
+                <div class="tab-content">
+                    <p>Tab 3 content is also hidden. Try clicking the tabs above to see the changes.</p>
                 </div>
             </div>
         </div>
@@ -318,14 +325,14 @@
         <div class="demo-section">
             <h2>⏳ Progress</h2>
             <div class="feature-list">
-                <strong>Varian:</strong>
+                <strong>Variants:</strong>
                 <ul>
                     <li>Standard bars</li>
                     <li>Animated & Striped</li>
                     <li>Circular progress</li>
                 </ul>
             </div>
-            <h3>Dasar</h3>
+            <h3>Basic</h3>
             <div class="progress" style="margin: 1rem 0;">
                 <div class="progress-bar" style="width: 65%; background: #6366F1;"></div>
             </div>
@@ -335,20 +342,70 @@
             </div>
         </div>
 
-        <!-- Tooltips & Modals -->
+        <!-- Interactive Components -->
         <div class="demo-section">
-            <h2>💬 Interactive</h2>
+            <h2>🎯 Interactive Components</h2>
             <div class="feature-list">
-                <strong>Komponen:</strong>
+                <strong>Components:</strong>
                 <ul>
-                    <li>Tooltips dengan 4 posisi</li>
-                    <li>Modal dengan berbagai ukuran</li>
-                    <li>Smooth animations</li>
+                    <li>Modal with JavaScript control</li>
+                    <li>Dropdown with toggle</li>
+                    <li>Carousel with navigation</li>
+                    <li>Toast notifications</li>
                 </ul>
             </div>
+            <h3>Modal & Dropdown</h3>
             <div class="demo-row">
-                <button class="btn btn--secondary" data-tooltip="Ini tooltip!" title="Tooltip">Hover Me</button>
-                <button class="btn btn--secondary" onclick="alert('Modal demo')">Buka Modal</button>
+                <button class="btn btn--primary" data-modal-target="#demo-modal">Open Modal</button>
+                <div class="dropdown">
+                    <button class="btn btn--secondary dropdown-toggle">Dropdown Menu</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Item 1</a>
+                        <a href="#" class="dropdown-item">Item 2</a>
+                        <div class="dropdown-item dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Item 3</a>
+                    </div>
+                </div>
+            </div>
+            <h3>Toast Notifications</h3>
+            <div class="demo-row">
+                <button class="btn btn--success" onclick="showDemoToast('success')">Success Toast</button>
+                <button class="btn btn--danger" onclick="showDemoToast('error')">Error Toast</button>
+                <button class="btn btn--warning" onclick="showDemoToast('warning')">Warning Toast</button>
+            </div>
+        </div>
+
+        <!-- Carousel Section -->
+        <div class="demo-section">
+            <h2>🎠 Carousel</h2>
+            <div class="feature-list">
+                <strong>Features:</strong>
+                <ul>
+                    <li>Navigation controls</li>
+                    <li>Optional auto-play</li>
+                    <li>Smooth transitions</li>
+                </ul>
+            </div>
+            <div class="carousel" data-autoplay="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div style="height: 200px; background: linear-gradient(45deg, #6366F1, #06B6D4); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            Slide 1
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div style="height: 200px; background: linear-gradient(45deg, #06B6D4, #10B981); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            Slide 2
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div style="height: 200px; background: linear-gradient(45deg, #10B981, #F59E0B); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            Slide 3
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev">&lt;</button>
+                <button class="carousel-control next">&gt;</button>
             </div>
         </div>
 
@@ -373,24 +430,24 @@
         <div class="demo-section">
             <h2>✍️ Typography</h2>
             <div class="feature-list">
-                <strong>Fitur:</strong>
+                <strong>Features:</strong>
                 <ul>
-                    <li>Fluid typography dengan clamp()</li>
+                    <li>Fluid typography with clamp()</li>
                     <li>Responsive headings</li>
                     <li>Text utilities</li>
                 </ul>
             </div>
             <h1 style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin: 1rem 0;">Responsive Heading</h1>
-            <p style="font-size: clamp(0.875rem, 2vw, 1.125rem);">Teks ini akan menyesuaikan ukuran dengan viewport secara fluid.</p>
+            <p style="font-size: clamp(0.875rem, 2vw, 1.125rem);">This text will fluidly adjust its size with the viewport.</p>
         </div>
     </div>
 
     <!-- Documentation Link -->
     <div style="background: white; padding: 2rem 1rem; text-align: center; margin-top: 2rem; border-top: 1px solid #e5e7eb;">
-        <h2>📚 Dokumentasi Lengkap</h2>
-        <p>Lihat dokumentasi lengkap di halaman komponen yang detail.</p>
+        <h2>📚 Complete Documentation</h2>
+        <p>See the complete documentation on the detailed components page.</p>
         <div class="demo-row" style="justify-content: center;">
-            <a href="components.html" class="btn btn--primary">Semua Komponen</a>
+            <a href="components.html" class="btn btn--primary">All Components</a>
             <a href="../README.md" class="btn btn--secondary">README</a>
             <a href="../MODERNIZATION.md" class="btn btn--secondary">Modernization</a>
         </div>
@@ -398,8 +455,8 @@
 
     <!-- Footer -->
     <div class="footer">
-        <h3>ZyroxCSS v2.0.0</h3>
-        <p>A modern, responsive CSS framework built with SCSS</p>
+        <h3>ZyroxCSS v2.1.0</h3>
+        <p>A modern, responsive CSS framework with JavaScript components</p>
         <p>
             <a href="https://github.com/ZyroxLabs/ZyroxCSS">GitHub</a> •
             <a href="https://github.com/ZyroxLabs/ZyroxCSS/releases">Releases</a> •
@@ -407,5 +464,41 @@
         </p>
         <p style="opacity: 0.7; font-size: 0.875rem;">© 2026 ZyroxLabs. All rights reserved.</p>
     </div>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Demo Modal</h3>
+                <button class="btn btn--ghost btn--sm" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This is an example modal that works with ZyroxCSS JavaScript!</p>
+                <p>This modal can be opened with a button, closed with the X button, backdrop click, or pressing Escape.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" data-modal-close>Close</button>
+                <button class="btn btn--primary" data-modal-close>OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo toast function
+        function showDemoToast(type) {
+            const messages = {
+                success: '✓ Operation successful!',
+                error: '✗ An error occurred!',
+                warning: '⚠ Attention required!'
+            };
+            // Using ZyroxCSS toast API
+            if (window.ZyroxCSS) {
+                const zyrox = new ZyroxCSS();
+                zyrox.showToast(messages[type], type, 3000);
+            } else {
+                alert(messages[type]); // Fallback
+            }
+        }
+    </script>
 </body>
 </html>
