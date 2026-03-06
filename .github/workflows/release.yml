@@ -35,7 +35,7 @@ jobs:
       - name: Generate SHA512
         id: hash
         run: |
-          sha512sum dist/zyroxcss.min.css | awk '{ print $1 }' > dist/zyroxcss.min.css.sha512
+          sha512sum dist/css/zyroxcss.min.css | awk '{ print $1 }' > dist/zyroxcss.min.css.sha512
           HASH=$(cat dist/zyroxcss.min.css.sha512)
           echo "sha512=$HASH" >> $GITHUB_ENV
 
@@ -43,11 +43,12 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name }}
-          name: ${{ github.ref_name }}
-          draft: true
-          body: |
-            **Release Date:** ${{ github.event.pushed_at }}
+         tag_name: ${{ github.ref_name }}
+         name: ${{ github.ref_name }}
+         draft: true
+         files: ./dist/css/zyroxcss.min.css
+         body: |
+            **Release Date:** ${{ github.event.head_commit.timestamp }}
             **Status:** Stable
             **Type:** Minor Update
 
