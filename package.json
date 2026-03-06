@@ -5,7 +5,7 @@
     "build:css": "npx sass src/scss/zyroxcss.scss dist/css/zyroxcss.css",
     "build:js": "cp src/js/zyroxcss.js dist/js/zyroxcss.js",
     "postcss": "npx postcss dist/css/zyroxcss.css --use autoprefixer -o dist/css/zyroxcss.css",
-    "build": "mkdir dist/js && npm run build:css && npm run build:js && npm run postcss"
+    "build": "mkdir -p dist/js && npm run build:css && npm run build:js && npm run postcss"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.0",
