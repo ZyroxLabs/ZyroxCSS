@@ -5,6 +5,57 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1] - 2026-03-07
+
+### Fixed
+- **Memory Leak**: Fixed carousel autoplay infinite interval leak by properly clearing intervals on destroy
+- **Modal Scroll Lock**: Improved scroll locking with scrollbar width compensation
+- **Dropdown Detection**: Enhanced outside click detection for more reliable dropdown closing
+- **Modal Backdrop**: Fixed backdrop click detection to prevent accidental modal closing
+- **Tooltip Management**: Improved tooltip visibility toggling with centralized hide function
+
+### Added
+- **Carousel Enhancements**:
+  - Functional carousel indicators/pagination system
+  - Touch/swipe gesture support for mobile devices
+  - Auto-pause carousel on hover, resume on mouse leave
+  - `carousel:change` custom event on slide transitions
+  - Indicator clicking to jump to specific slides
+
+- **Dropdown Improvements**:
+  - Keyboard navigation with Arrow Up/Down keys
+  - Enter/Space key support for item selection
+  - Auto-focus first item when dropdown opens
+  - Better active dropdown state tracking
+
+- **Tab Enhancements**:
+  - Keyboard navigation with Arrow keys
+  - Smooth scroll into view for tab content
+  - `tabs:change` custom event on tab switching
+
+- **Modal Improvements**:
+  - Scroll position restoration on modal close
+  - `modal:open` and `modal:close` custom events
+  - Better focus management within modals
+
+- **Toast Notifications**:
+  - Proper ARIA attributes for accessibility
+  - `toast:open` and `toast:close` custom events
+
+- **API Methods**:
+  - `closeAllDropdowns()`: Programmatically close all dropdowns
+  - `hideAllTooltips()`: Programmatically hide all tooltips
+  - `destroy()`: Cleanup method for memory management
+  - Global `window.zyroxCSS` instance access
+
+### Enhanced
+- **Accessibility**: Improved ARIA attributes and focus management across all components
+- **UI Animations**: Enhanced transitions with better cubic-bezier timing (200ms for dropdowns, 500ms for carousel)
+- **Carousel Controls**: Improved button states and indicator styling with animation on active
+- **Focus States**: Better visual feedback with outline styling for keyboard navigation
+- **Dropdown Transitions**: Smoother animations and better state management
+- **Modal Animations**: Enhanced backdrop blur effect and improved timing
+
 ## [2.1.0] - 2026-03-06
 
 ### Added
