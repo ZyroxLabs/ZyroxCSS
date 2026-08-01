@@ -9,11 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: #ffffff;
   padding: 1rem var(--spacing-md);
-  color: white;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition-fast);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
 
   .container {
@@ -23,267 +23,60 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    gap: 2rem;
   }
 
   .brand {
     font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
+    font-weight: 800;
+    color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: 0.08em;
-    transition: var(--transition);
-    flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    
-    &:hover {
-      color: var(--secondary-light);
-      transform: scale(1.02);
-    }
-
-    img {
-      height: 32px;
-      width: auto;
-    }
+    gap: 0.5rem;
   }
 
   .nav-menu {
     display: flex;
-    gap: 0.25rem;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
     align-items: center;
-    flex: 1;
-
-    @media (max-width: 768px) {
-      display: none;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background: var(--primary-dark);
-      padding: 1rem 0;
-      gap: 0;
-      border-top: 2px solid rgba(255, 255, 255, 0.1);
-      max-height: calc(100vh - 70px);
-      overflow-y: auto;
-
-      &.active {
-        display: flex;
-      }
-    }
-  }
-
-  .nav-item {
-    position: relative;
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-
-    &:hover > .nav-submenu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
   }
 
   .nav-link {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    padding: 0.75rem 1.25rem;
     font-weight: 500;
-    font-size: 0.95rem;
-    transition: var(--transition);
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius-md);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      border-radius: 0;
-    }
+    transition: var(--transition);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-
-      @media (max-width: 768px) {
-        transform: translateX(8px);
-        background: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    &.active {
-      background: rgba(255, 255, 255, 0.25);
-      
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 1.25rem;
-        right: 1.25rem;
-        height: 3px;
-        background: var(--secondary-light);
-        border-radius: 3px;
-
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
+      background: var(--background-secondary);
+      color: var(--primary-color);
     }
   }
 
-  .nav-submenu {
-    position: absolute;
-    background: var(--primary-dark);
-    top: 100%;
-    left: 0;
-    min-width: 220px;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: var(--transition);
-    list-style: none;
-    padding: 0.5rem 0;
-    z-index: 10;
-    margin-top: 0.5rem;
-
-    @media (max-width: 768px) {
-      position: static;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: none;
-      border-radius: 0;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      margin-top: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      padding: 0;
-
-      .nav-item:hover & {
-        max-height: 500px;
-      }
-    }
-
-    .nav-link {
-      padding: 0.75rem 1.5rem;
-      font-size: 0.875rem;
-      display: block;
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: none;
-        padding-left: 1.75rem;
-
-        @media (max-width: 768px) {
-          padding-left: 1.75rem;
-        }
-      }
-    }
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
+  &--transparent {
     background: transparent;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    transition: var(--transition);
-    z-index: 20;
+    box-shadow: none;
+    color: white;
 
-    @media (max-width: 768px) {
-      display: flex;
-    }
-
-    span {
-      width: 28px;
-      height: 3px;
-      background: white;
-      transition: var(--transition);
-      border-radius: 2px;
-    }
-
-    &.active {
-      span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-      }
-
-      span:nth-child(2) {
-        opacity: 0;
-      }
-
-      span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-      }
-    }
-  }
-
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: auto;
-
-    @media (max-width: 768px) {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      right: 1rem;
-      margin-left: 0;
-      gap: 0.5rem;
-
-      > * {
-        flex: 1;
-      }
+    .nav-link { color: white; }
+    &:hover, &.sticky {
+      background: #ffffff;
+      color: var(--text-dark);
+      box-shadow: var(--shadow-md);
+      .nav-link { color: var(--text-dark); }
     }
   }
 
   &.sticky {
     position: sticky;
   }
-
-  &--transparent {
-    background: transparent;
-    box-shadow: none;
-    
-    &:hover, &.sticky {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-      box-shadow: var(--shadow-lg);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, #0F172A 100%);
-
-    .nav-link {
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-  }
 }
 
 body {
   padding-top: 70px;
-
-  @media (max-width: 768px) {
-    padding-top: 70px;
-  }
 }
