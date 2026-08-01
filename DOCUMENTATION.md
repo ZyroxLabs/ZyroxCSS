@@ -5,31 +5,37 @@ A modern, responsive CSS framework built with SCSS.
 ## 🎨 Component Index
 1. [Accordion](#accordion)
 2. [Alerts](#alerts)
-3. [Avatar](#avatar)
-4. [Badges](#badges)
-5. [Buttons](#buttons)
-6. [Cards](#cards)
-7. [Carousel](#carousel)
-8. [Code Snippet](#code-snippet)
-9. [Dropdowns](#dropdowns)
-10. [File Uploader](#file-uploader)
-11. [Forms](#forms)
-12. [Glassmorphism](#glassmorphism)
-13. [Grid System](#grid-system)
-14. [Modals](#modals)
-15. [Navbar](#navbar)
-16. [Pagination](#pagination)
-17. [Progress Bars](#progress-bars)
-18. [Sidebar](#sidebar)
-19. [Skeletons](#skeletons)
-20. [Spinner](#spinner)
-21. [Table](#table)
-22. [Tabs](#tabs)
-23. [Tooltips](#tooltips)
+3. [Aspect Ratio](#aspect-ratio)
+4. [Avatar](#avatar)
+5. [Badges](#badges)
+6. [Breadcrumbs](#breadcrumbs)
+7. [Buttons](#buttons)
+8. [Cards](#cards)
+9. [Carousel](#carousel)
+10. [Code Snippet](#code-snippet)
+11. [Dark Mode](#dark-mode)
+12. [Dropdowns](#dropdowns)
+13. [File Uploader](#file-uploader)
+14. [Forms](#forms)
+15. [Glassmorphism](#glassmorphism)
+16. [Grid System](#grid-system)
+17. [Hero](#hero)
+18. [Modals](#modals)
+19. [Navbar](#navbar)
+20. [Pagination](#pagination)
+21. [Progress Bars](#progress-bars)
+22. [Sidebar](#sidebar)
+23. [Skeletons](#skeletons)
+24. [Spinner](#spinner)
+25. [Switch](#switch)
+26. [Table](#table)
+27. [Tabs](#tabs)
+28. [Toasts](#toasts)
+29. [Tooltips](#tooltips)
 
 ---
 
-### <a name="accordion"></a>Accordion
+### <a name="accordion"></a>Accordion & Accordion Advanced
 ```html
 <div class="accordion">
   <div class="accordion__header">Header</div>
@@ -41,6 +47,11 @@ A modern, responsive CSS framework built with SCSS.
 ```html
 <div class="alert alert--success">Success</div>
 <div class="alert alert--danger">Error</div>
+```
+
+### <a name="aspect-ratio"></a>Aspect Ratio
+```html
+<div class="aspect-video"><iframe src="..."></iframe></div>
 ```
 
 ### <a name="avatar"></a>Avatar
@@ -56,6 +67,11 @@ A modern, responsive CSS framework built with SCSS.
 <span class="badge-dot badge-dot--success">Online</span>
 ```
 
+### <a name="breadcrumbs"></a>Breadcrumbs
+```html
+<ol class="breadcrumb"><li><a href="#">Home</a></li><li>Link</li></ol>
+```
+
 ### <a name="buttons"></a>Buttons
 ```html
 <button class="btn btn--primary">Primary</button>
@@ -67,7 +83,6 @@ A modern, responsive CSS framework built with SCSS.
 <div class="card">
   <div class="card-body">Content</div>
 </div>
-<!-- Overlay Card -->
 <div class="card-overlay">
   <img src="img.jpg" class="card-overlay__image">
   <div class="card-overlay__content">Content</div>
@@ -76,7 +91,7 @@ A modern, responsive CSS framework built with SCSS.
 
 ### <a name="carousel"></a>Carousel
 ```html
-<div class="carousel" data-autoplay="3000">
+<div class="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">Item 1</div>
   </div>
@@ -88,6 +103,11 @@ A modern, responsive CSS framework built with SCSS.
 <div class="code-block">
   <code>console.log("Hello");</code>
 </div>
+```
+
+### <a name="dark-mode"></a>Dark Mode
+```html
+<button data-theme-toggle>Toggle Theme</button>
 ```
 
 ### <a name="dropdowns"></a>Dropdowns
@@ -108,6 +128,7 @@ A modern, responsive CSS framework built with SCSS.
 ### <a name="forms"></a>Forms
 ```html
 <form class="form-group">
+  <label class="form-label">Label</label>
   <input type="text" class="form-control">
 </form>
 ```
@@ -125,6 +146,13 @@ A modern, responsive CSS framework built with SCSS.
 </div>
 ```
 
+### <a name="hero"></a>Hero
+```html
+<div class="hero">
+  <h1>Hero Title</h1>
+</div>
+```
+
 ### <a name="modals"></a>Modals
 ```html
 <div id="modal" class="modal">
@@ -135,7 +163,7 @@ A modern, responsive CSS framework built with SCSS.
 
 ### <a name="navbar"></a>Navbar
 ```html
-<nav class="navbar">...</nav>
+<nav class="navbar"><a href="#" class="brand">Brand</a></nav>
 ```
 
 ### <a name="pagination"></a>Pagination
@@ -147,9 +175,7 @@ A modern, responsive CSS framework built with SCSS.
 
 ### <a name="progress-bars"></a>Progress Bars
 ```html
-<div class="progress">
-  <div class="progress-bar" style="width: 50%;"></div>
-</div>
+<div class="progress"><div class="progress-bar" style="width: 50%;"></div></div>
 ```
 
 ### <a name="sidebar"></a>Sidebar
@@ -168,6 +194,11 @@ A modern, responsive CSS framework built with SCSS.
 <div class="spinner"></div>
 ```
 
+### <a name="switch"></a>Switch
+```html
+<label class="switch"><input type="checkbox"><span class="slider"></span></label>
+```
+
 ### <a name="table"></a>Table
 ```html
 <table class="table table--striped table--hover">...</table>
@@ -179,6 +210,11 @@ A modern, responsive CSS framework built with SCSS.
   <button class="tab-link active">Tab 1</button>
   <div class="tab-content active">Content 1</div>
 </div>
+```
+
+### <a name="toasts"></a>Toasts
+```html
+<button onclick="zyroxCSS.showToast('Msg')">Toast</button>
 ```
 
 ### <a name="tooltips"></a>Tooltips
