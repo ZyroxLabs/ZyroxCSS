@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZyroxCSS Documentation</title>
+    <title>ZyroxCSS Documentation | Modern Responsive Framework</title>
     <link rel="stylesheet" href="dist/css/zyroxcss.css">
     <style>
         :root { --font-sans: 'Inter', sans-serif; --bg-gray: #f9fafb; --text-dark: #111827; }
         body { font-family: var(--font-sans); background: var(--bg-gray); color: var(--text-dark); margin: 0; display: flex; }
-        .sidebar { width: 280px; height: 100vh; position: fixed; background: #fff; border-right: 1px solid #e5e7eb; padding: 2rem; overflow-y: auto; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; background: #fff; border-right: 1px solid #e5e7eb; padding: 2rem; overflow-y: auto; z-index: 1000; }
         .content { margin-left: 280px; padding: 3rem; flex: 1; }
         .section { margin-bottom: 4rem; }
-        .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 1rem; }
         h1 { font-size: 2.5rem; font-weight: 800; }
         h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-color); display: inline-block; }
         .code-block { background: #1e293b; color: #f8fafc; padding: 1.5rem; border-radius: 0.5rem; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+        .navbar { position: sticky; top: 0; z-index: 900; background: #fff; padding: 1rem; border-bottom: 1px solid #e5e7eb; }
     </style>
 </head>
 <body>
@@ -22,8 +23,28 @@
         <h2 class="text-primary text-xl">ZyroxCSS v2.2.0</h2>
         <nav class="flex-col">
             <a href="#intro" class="sidebar__item">Introduction</a>
+            <a href="#accordion" class="sidebar__item">Accordion</a>
+            <a href="#alerts" class="sidebar__item">Alerts</a>
+            <a href="#avatar" class="sidebar__item">Avatar</a>
+            <a href="#badges" class="sidebar__item">Badges</a>
             <a href="#buttons" class="sidebar__item">Buttons</a>
+            <a href="#cards" class="sidebar__item">Cards</a>
+            <a href="#carousel" class="sidebar__item">Carousel</a>
+            <a href="#code-block" class="sidebar__item">Code Block</a>
+            <a href="#dropdowns" class="sidebar__item">Dropdowns</a>
+            <a href="#file-uploader" class="sidebar__item">File Uploader</a>
+            <a href="#forms" class="sidebar__item">Forms</a>
+            <a href="#glass" class="sidebar__item">Glassmorphism</a>
+            <a href="#modals" class="sidebar__item">Modals</a>
+            <a href="#navbar" class="sidebar__item">Navbar</a>
+            <a href="#pagination" class="sidebar__item">Pagination</a>
+            <a href="#progress-bars" class="sidebar__item">Progress Bars</a>
+            <a href="#sidebar" class="sidebar__item">Sidebar</a>
+            <a href="#skeletons" class="sidebar__item">Skeletons</a>
+            <a href="#spinner" class="sidebar__item">Spinner</a>
             <a href="#table" class="sidebar__item">Table</a>
+            <a href="#tabs" class="sidebar__item">Tabs</a>
+            <a href="#tooltips" class="sidebar__item">Tooltips</a>
         </nav>
     </aside>
 
@@ -33,23 +54,136 @@
             <p class="text-secondary text-lg">A modern, utility-first CSS framework.</p>
         </section>
 
+        <section id="accordion" class="section">
+            <h2>Accordion</h2>
+            <div class="accordion"><div class="accordion__header">Header</div><div class="accordion__body">Content</div></div>
+            <div class="code-block"><code>&lt;div class="accordion"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="alerts" class="section">
+            <h2>Alerts</h2>
+            <div class="alert alert--success">Success</div>
+            <div class="code-block"><code>&lt;div class="alert alert--success"&gt;Success&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="avatar" class="section">
+            <h2>Avatar</h2>
+            <img src="https://via.placeholder.com/40" class="avatar">
+            <div class="code-block"><code>&lt;img src="img.jpg" class="avatar"&gt;</code></div>
+        </section>
+
+        <section id="badges" class="section">
+            <h2>Badges</h2>
+            <span class="badge badge--primary">Primary</span>
+            <div class="code-block"><code>&lt;span class="badge"&gt;Primary&lt;/span&gt;</code></div>
+        </section>
+
         <section id="buttons" class="section">
             <h2>Buttons</h2>
-            <div class="card">
-                <button class="btn btn--primary">Primary Button</button>
-            </div>
+            <button class="btn btn--primary">Primary</button>
             <div class="code-block"><code>&lt;button class="btn btn--primary"&gt;Primary&lt;/button&gt;</code></div>
+        </section>
+
+        <section id="cards" class="section">
+            <h2>Cards</h2>
+            <div class="card"><div class="card-body">Content</div></div>
+            <div class="code-block"><code>&lt;div class="card"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="carousel" class="section">
+            <h2>Carousel</h2>
+            <div class="carousel" style="width:200px"><div class="carousel-inner"><div class="carousel-item">Item</div></div></div>
+            <div class="code-block"><code>&lt;div class="carousel"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="code-block" class="section">
+            <h2>Code Block</h2>
+            <div class="code-block"><code>console.log("Hello");</code></div>
+            <div class="code-block"><code>&lt;div class="code-block"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="dropdowns" class="section">
+            <h2>Dropdowns</h2>
+            <div class="dropdown"><button class="dropdown-toggle btn btn--primary">Menu</button></div>
+            <div class="code-block"><code>&lt;div class="dropdown"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="file-uploader" class="section">
+            <h2>File Uploader</h2>
+            <div class="file-uploader">Drag & Drop</div>
+            <div class="code-block"><code>&lt;div class="file-uploader"&gt;Drag & Drop&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="forms" class="section">
+            <h2>Forms</h2>
+            <input type="text" class="form-control" placeholder="Form">
+            <div class="code-block"><code>&lt;input type="text" class="form-control"&gt;</code></div>
+        </section>
+
+        <section id="glass" class="section">
+            <h2>Glassmorphism</h2>
+            <div class="glass" style="padding:1rem">Glass</div>
+            <div class="code-block"><code>&lt;div class="glass"&gt;Content&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="modals" class="section">
+            <h2>Modals</h2>
+            <div class="modal" style="position:relative; display:block"><div class="modal-content">Modal Content</div></div>
+            <div class="code-block"><code>&lt;div class="modal"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="navbar" class="section">
+            <h2>Navbar</h2>
+            <nav class="navbar"><a href="#" class="brand">Brand</a></nav>
+            <div class="code-block"><code>&lt;nav class="navbar"&gt;...&lt;/nav&gt;</code></div>
+        </section>
+
+        <section id="pagination" class="section">
+            <h2>Pagination</h2>
+            <div class="pagination"><div class="page-item">1</div></div>
+            <div class="code-block"><code>&lt;div class="pagination"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="progress-bars" class="section">
+            <h2>Progress Bars</h2>
+            <div class="progress"><div class="progress-bar" style="width: 50%;"></div></div>
+            <div class="code-block"><code>&lt;div class="progress"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="sidebar" class="section">
+            <h2>Sidebar</h2>
+            <nav id="sidebar" class="sidebar" style="position:relative">Sidebar</nav>
+            <div class="code-block"><code>&lt;nav id="sidebar" class="sidebar"&gt;...&lt;/nav&gt;</code></div>
+        </section>
+
+        <section id="skeletons" class="section">
+            <h2>Skeletons</h2>
+            <div class="skeleton" style="height:20px"></div>
+            <div class="code-block"><code>&lt;div class="skeleton"&gt;&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="spinner" class="section">
+            <h2>Spinner</h2>
+            <div class="spinner"></div>
+            <div class="code-block"><code>&lt;div class="spinner"&gt;&lt;/div&gt;</code></div>
         </section>
 
         <section id="table" class="section">
             <h2>Table</h2>
-            <div class="card">
-                <table class="table table--striped">
-                    <thead><tr><th>Name</th></tr></thead>
-                    <tbody><tr><td>John Doe</td></tr></tbody>
-                </table>
-            </div>
-            <div class="code-block"><code>&lt;table class="table table--striped"&gt;...&lt;/table&gt;</code></div>
+            <table class="table table--striped"><thead><tr><th>Name</th></tr></thead><tbody><tr><td>John</td></tr></tbody></table>
+            <div class="code-block"><code>&lt;table class="table"&gt;...&lt;/table&gt;</code></div>
+        </section>
+
+        <section id="tabs" class="section">
+            <h2>Tabs</h2>
+            <div class="tabs"><button class="tab-link active">Tab</button></div>
+            <div class="code-block"><code>&lt;div class="tabs"&gt;...&lt;/div&gt;</code></div>
+        </section>
+
+        <section id="tooltips" class="section">
+            <h2>Tooltips</h2>
+            <div class="tooltip" style="position:relative">Hover<span class="tooltip-text">Tip</span></div>
+            <div class="code-block"><code>&lt;div class="tooltip"&gt;...&lt;/div&gt;</code></div>
         </section>
     </main>
     <script src="dist/js/zyroxcss.js"></script>
