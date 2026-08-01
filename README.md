@@ -43,6 +43,13 @@ v2.0.0 includes significant breaking changes from v1.x. Please see [CHANGELOG.md
 - **Dropdowns**: Responsive dropdown menus with mobile support
 - **Carousel**: Image carousel component
 - **Spinners**: Loading spinners and skeleton screens
+- **Skeletons**: Loading placeholders for content
+- **Sidebar**: Responsive side navigation
+- **Table**: Data tables with styling variants
+- **File Uploader**: Drag-and-drop file upload interface
+- **Accordion Advanced**: Expanded accordion functionality
+- **Card Overlay**: Cards with image overlays
+- **Badge Dot**: Status indicators with dots
 
 ## 📦 Installation
 
@@ -92,7 +99,7 @@ npm run build
 
 ### JavaScript Components
 
-ZyroxCSS v2.1.0 includes full JavaScript functionality for interactive components:
+ZyroxCSS v2.1.1 includes full JavaScript functionality for interactive components:
 
 ```html
 <!-- Include both CSS and JS -->
@@ -105,18 +112,18 @@ ZyroxCSS v2.1.0 includes full JavaScript functionality for interactive component
 - **Dropdowns**: Toggle menus with mobile support
 - **Carousels**: Navigation controls and auto-play
 - **Tabs**: Dynamic content switching
-- **Toasts**: Programmatic notifications
+- **Toasts**: Programmatic notifications with positioning
 - **Tooltips**: Enhanced for touch devices
 - **Alerts**: Dismissible notifications
+- **Skeletons**: Loading placeholders
 
 **JavaScript API:**
 ```javascript
 // Initialize all components
 const zyrox = new ZyroxCSS();
 
-// Manual control
-zyrox.openModal('#my-modal');
-zyrox.showToast('Success!', 'success');
+// Toast with position
+zyrox.showToast('Data saved successfully!', 'success', 3000, 'top-right');
 ```
 
 ## 🎯 Breakpoints
@@ -226,7 +233,52 @@ The framework uses standard responsive breakpoints:
 </form>
 ```
 
-### Navigation
+### Sidebar
+
+```html
+<!-- Default Sidebar -->
+<nav class="sidebar">...</nav>
+
+<!-- Hidden State (Use JS to toggle) -->
+<nav class="sidebar sidebar--hidden">...</nav>
+```
+
+### Table
+
+```html
+<!-- Striped Table -->
+<table class="table table--striped">...</table>
+
+<!-- Hover Table -->
+<table class="table table--hover">...</table>
+
+<!-- Combined -->
+<table class="table table--striped table--hover">...</table>
+```
+
+### Badge Dot
+
+```html
+<!-- Default -->
+<span class="badge-dot">Status</span>
+
+<!-- Success -->
+<span class="badge-dot badge-dot--success">Online</span>
+
+<!-- Danger -->
+<span class="badge-dot badge-dot--danger">Offline</span>
+```
+
+### Accordion Advanced
+
+```html
+<div class="accordion">
+    <div class="accordion__header">Click me</div>
+    <div class="accordion__body">Content here</div>
+</div>
+```
+
+## 📦 Installation
 
 ```html
 <nav class="navbar">
@@ -325,7 +377,7 @@ Users can prefer dark mode in their system settings and the site will automatica
 
 ## 📚 Documentation
 
-For complete documentation and more examples, visit the main README or check the source SCSS files in the `src/scss/` directory.
+For complete documentation and more examples, please refer to our [DOCUMENTATION.md](./DOCUMENTATION.md) file or check the source SCSS files in the `src/scss/` directory.
 
 ## 📄 License
 

@@ -1,0 +1,18 @@
+// File Uploader Component
+.file-uploader {
+  border: 2px dashed var(--border-color);
+  padding: var(--spacing-lg);
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  color: var(--text-secondary);
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--primary-color);
+  }
+
+  &__input {
+    display: none;
+  }
+}

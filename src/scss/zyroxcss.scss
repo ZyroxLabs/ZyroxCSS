@@ -7,20 +7,26 @@
  */
 
 @use "accordion";
+@use "accordion-advanced";
 @use "alert";
 @use "aspect-ratio";
+@use "avatar";
 @use "badge";
+@use "badge-dot";
 @use "button";
 @use "button-effects";
 @use "card";
+@use "card-overlay";
 @use "carousel";
 @use "color";
 @use "cursor";
 @use "dark-mode";
 @use "dropdown";
 @use "filter-effects";
+@use "file-uploader";
 @use "flex";
 @use "forms";
+@use "glass";
 @use "grid";
 @use "hero";
 @use "interactive-states";
@@ -30,10 +36,17 @@
 @use "navbar";
 @use "progress";
 @use "responsive";
+@use "sidebar";
 @use "responsive-typography";
 @use "scroll";
+@use "skeleton";
 @use "spacing";
 @use "spinner";
+@use "table";
+@use "switch";
+@use "breadcrumbs";
+@use "code";
+@use "pagination";
 @use "tabs";
 @use "text-effects";
 @use "toast";

@@ -37,6 +37,11 @@
     background: var(--info-color);
   }
 
+  &.toast--top-right { top: 20px; right: 20px; bottom: auto; left: auto; }
+  &.toast--top-left { top: 20px; left: 20px; bottom: auto; right: auto; }
+  &.toast--bottom-left { bottom: 20px; left: 20px; right: auto; top: auto; }
+  &.toast--center { top: 50%; left: 50%; transform: translate(-50%, -50%); bottom: auto; right: auto; }
+
   .toast-content {
     display: flex;
     align-items: center;

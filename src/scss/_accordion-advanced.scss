@@ -1,0 +1,18 @@
+// Accordion Advanced
+.accordion {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-sm);
+
+  &__header {
+    padding: var(--spacing-md);
+    cursor: pointer;
+    background: var(--background-secondary);
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+  }
+}

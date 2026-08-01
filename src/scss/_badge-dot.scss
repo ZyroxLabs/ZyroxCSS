@@ -1,0 +1,18 @@
+// Badge Dot
+.badge-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+  }
+
+  &--success::before { background-color: var(--success-color); }
+  &--danger::before { background-color: var(--error-color); }
+}

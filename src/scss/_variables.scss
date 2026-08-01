@@ -1,14 +1,14 @@
 :root {
   /* Primary Colors - Modern Palette */
-  --primary-color: #6366F1;
-  --primary-dark: #4F46E5;
+  --primary-color: #4F46E5;
+  --primary-dark: #4338CA;
   --primary-light: #818CF8;
   --secondary-color: #06B6D4;
   --secondary-dark: #0891B2;
   --secondary-light: #22D3EE;
   
   /* Neutral Colors */
-  --text-color: #1F2937;
+  --text-color: #111827;
   --text-secondary: #6B7280;
   --bg-color: #FFFFFF;
   --bg-secondary: #F9FAFB;
@@ -45,17 +45,17 @@
   --border-radius-xl: 1rem;
   --border-radius-full: 9999px;
   
-  /* Shadows */
+  /* Shadows - Refined for Modern Aesthetics */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
-  /* Transitions & Animations */
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s ease-in-out;
-  --transition-slow: all 0.5s ease-in-out;
+  /* Transitions & Animations - Smoother */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.1s ease-in-out;
+  --transition-slow: all 0.4s ease-in-out;
   
   /* Container */
   --container-width: 1280px;

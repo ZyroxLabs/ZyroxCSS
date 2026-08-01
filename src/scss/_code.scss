@@ -1,0 +1,16 @@
+// Code Snippet Component
+.code-block {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: var(--spacing-md) 0;
+
+  code {
+    font-family: inherit;
+  }
+}
