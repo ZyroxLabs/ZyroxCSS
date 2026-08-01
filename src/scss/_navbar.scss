@@ -255,13 +255,26 @@
     }
   }
 
+  /* ... existing code ... */
   /* Sticky navbar on scroll */
   &.sticky {
     position: sticky;
   }
 
+  /* Transparent variant */
+  &--transparent {
+    background: transparent;
+    box-shadow: none;
+    
+    &:hover, &.sticky {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
+/* ... existing code ... */
     background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, #0F172A 100%);
 
     .nav-link {
