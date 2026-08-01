@@ -255,13 +255,10 @@
     }
   }
 
-  /* ... existing code ... */
-  /* Sticky navbar on scroll */
   &.sticky {
     position: sticky;
   }
 
-  /* Transparent variant */
   &--transparent {
     background: transparent;
     box-shadow: none;
@@ -272,9 +269,7 @@
     }
   }
 
-  /* Dark mode support */
   @media (prefers-color-scheme: dark) {
-/* ... existing code ... */
     background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, #0F172A 100%);
 
     .nav-link {
@@ -285,7 +280,6 @@
   }
 }
 
-/* Navbar spacing for body */
 body {
   padding-top: 70px;
 
