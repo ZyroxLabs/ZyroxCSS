@@ -2,81 +2,135 @@
 
 .navbar {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
-  padding: 1rem var(--spacing-md);
-  color: var(--text-dark);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  padding: 0.75rem var(--spacing-md, 1.5rem);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-dark, #0f172a);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
 
   .container {
-    max-width: var(--container-xl);
+    max-width: var(--container-xl, 1280px);
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
   }
 
   .brand {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--primary-color, #4f46e5);
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   .nav-menu {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.25rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center;
   }
 
   .nav-link {
-    color: var(--text-color);
+    color: var(--text-color, #475569);
     text-decoration: none;
+    font-size: 0.875rem;
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-md);
-    transition: var(--transition);
+    padding: 0.5rem 0.875rem;
+    border-radius: var(--border-radius-md, 0.5rem);
+    transition: all 0.15s ease;
 
     &:hover {
-      background: var(--background-secondary);
-      color: var(--primary-color);
+      background-color: var(--bg-hover, rgba(0, 0, 0, 0.04));
+      color: var(--primary-color, #4f46e5);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color, #4f46e5);
+      outline-offset: 2px;
+    }
+
+    &.is-active {
+      color: var(--primary-color, #4f46e5);
+      font-weight: 600;
+      background-color: color-mix(in srgb, var(--primary-color, #4f46e5) 8%, transparent);
     }
   }
 
   &--transparent {
-    background: transparent;
-    box-shadow: none;
-    color: white;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+    color: #ffffff;
 
-    .nav-link { color: white; }
-    &:hover, &.sticky {
-      background: #ffffff;
-      color: var(--text-dark);
-      box-shadow: var(--shadow-md);
-      .nav-link { color: var(--text-dark); }
+    .brand {
+      color: #ffffff;
     }
-  }
 
-  &.sticky {
-    position: sticky;
+    .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+      }
+
+      &.is-active {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    &.is-scrolled {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: rgba(0, 0, 0, 0.05);
+      color: var(--text-dark, #0f172a);
+      box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+
+      .brand {
+        color: var(--primary-color, #4f46e5);
+      }
+
+      .nav-link {
+        color: var(--text-color, #475569);
+
+        &:hover {
+          background-color: var(--bg-hover, rgba(0, 0, 0, 0.04));
+          color: var(--primary-color, #4f46e5);
+        }
+
+        &.is-active {
+          color: var(--primary-color, #4f46e5);
+          background-color: color-mix(in srgb, var(--primary-color, #4f46e5) 8%, transparent);
+        }
+      }
+    }
   }
 }
 
 body {
-  padding-top: 70px;
+  padding-top: var(--navbar-height, 4rem);
 }
